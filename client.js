@@ -6,7 +6,7 @@ var m1 = [[1, 2], [2, 3], [3, 1], [4, 0.42], [2, 3.14]];
 var m2 = [[5, 2.5], [2, 3], [3,2], [3.2,1]];
 
 
-var m3 = [[0.8, 0.25], [0.81, 0.17]];
+var m3 = [[0.6, 0.25], [0.81, 0.17]];
 
 // It's annoying that they're not formatted the same, but we get the benefit that the length of their element-arrays is always the same.
 
