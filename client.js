@@ -1,17 +1,11 @@
 
-console.log('we in');
-
 // A 5x2 matrix (first matrix, array of rows);
 var m1 = [[1, 2], [2, 3], [3, 1], [4, 0.42], [2, 3.14]];
-// Wait wait this is weird, why does it think these are backwards? (i.e. flip 2.5 and 0):
-// i.e. it's behaving as if this were an array of columns
 
-// All right whatever let's run with it, second matrix has to be passed as array of cols rather than rows:
 // A 2x4 matrix (second matrix, array of cols):
 var m2 = [[5, 2.5], [2, 3], [3,2], [3.2,1]];
 
-// A matrix is an array of rows; each row is an arrow of col elements.
-// Ex: 3x2, which is 3 elements of length 2, (e.g. [[1, 2], [2, 3], [3,1]]) times a 2x1 ([[5], [2.5]]), should return a 3x1 ([[10], [17.5], [17.5])
+// A matrix is either an array of rows (first argument a) or an array of cols (second argument b):
 function matrixMult(a, b) {
   var aRows = a.length;
   var aCols = a[0].length;
@@ -20,14 +14,6 @@ function matrixMult(a, b) {
 
   // console.log(aRows, aCols, bRows, bCols);
   var mOut = [];
-
-
-  // for (var k=0; k < aRows; k++) {
-  //   mOut.push([]);
-  // }
-
-  // console.log(mOut);
-
 
   for (var i=0; i < aRows; i++) {
     var ar = a[i];
@@ -43,7 +29,6 @@ function matrixMult(a, b) {
   }
 
   console.log(mOut);
-
 }
 
 
