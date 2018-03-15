@@ -6,7 +6,7 @@ var m1 = [[1, 2], [2, 3], [3, 1], [4, 0.42], [2, 3.14]];
 var m2 = [[5, 2.5], [2, 3], [3,2], [3.2,1]];
 
 
-var m3 = [[0.8, 0.2], [0.15, 0.85]];
+var m3 = [[0.8, 0.25], [0.81, 0.17]];
 
 // It's annoying that they're not formatted the same, but we get the benefit that the length of their element-arrays is always the same.
 
@@ -49,15 +49,31 @@ function multRows(row, col) {
 
 // matrixMult(m1, m2);
 
-var m = m3;
+$(document).ready(function() {
+  var m = m3;
 
-var i = 10;
+  var i = 30;
 
-while (i > 0) {
-  // Let's check to ensure that order doesn't matter here:
-  m = matrixMult(m3, m);
-  console.log(m);
-  i--;
-}
-// var m = matrixMult(m3, m3);
-// matrixMult(m, m3);
+  while (i > 0) {
+    // Let's check to ensure that order doesn't matter here:
+    m = matrixMult(m3, m);
+    console.log(m);
+
+    $('#hi').append('<p>' + m + '</p>');
+    i--;
+  }
+  // var m = matrixMult(m3, m3);
+  // matrixMult(m, m3);
+});
+
+
+
+
+
+
+
+
+
+
+
+// ahoy
