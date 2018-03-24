@@ -1,4 +1,7 @@
 
+
+
+console.log('js');
 // A 5x2 matrix (first matrix, array of rows, 5 elements of 2);
 var m1 = [[1, 2], [2, 3], [3, 1], [4, 0.42], [2, 3.14]];
 
@@ -35,7 +38,7 @@ function matrixMult(a, b) {
 
   // console.log(mOut);
   return mOut;
-}
+} // end matrixMult
 
 
 // Sample input: [1, 1, 2] and [2, 3, 5]:
@@ -50,21 +53,40 @@ function multRows(row, col) {
 // matrixMult(m1, m2);
 
 $(document).ready(function() {
+  console.log('hithere');
+
+  // COMMENT OUT FOR OTHER:
   var m = m3;
 
   var i = 30;
 
+  // Either markov or This while loop. While loop works but i'm not sure why.
+  // markov(m3, i);
+
   while (i > 0) {
     // Let's check to ensure that order doesn't matter here:
-    m = matrixMult(m3, m);
+    // Yep, it doesn't matter.
+    // Intersting -- can't store this in a new variable x -- that won't update.
+    m = matrixMult(m, m3);
     console.log(m);
 
     $('#hi').append('<p>' + m + '</p>');
     i--;
   }
-  // var m = matrixMult(m3, m3);
-  // matrixMult(m, m3);
+  m = matrixMult(m3, m3);
+  matrixMult(m, m3);
 });
+
+function markov(matrix, num) {
+  console.log('hi');
+  var res;
+  while (num > 0) {
+    res = matrixMult(matrix, matrix);
+
+    $('#hi').append('<p>' + res + '</p>');
+    num --;
+  }
+}
 
 
 
